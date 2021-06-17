@@ -20,14 +20,16 @@ const material = new THREE.MeshBasicMaterial({ color: 0x381648 }); //Mesh Materi
 const hyperionCube = new THREE.Mesh(geometry, material); //Create a mesh that applies the mesh material to the geometry
 battle.add(hyperionCube); //add our new mesh obj to the scene
 
-camera.position.z = 3; //move the camera out
+camera.position.z = 2; //move the camera out
 
+hyperionCube.rotation.x += 40;
+//hyperionCube.position.x -= 2.5;
+//hyperionCube.position.y -= 1.5;
 //Render(Animate) Loop
 function animate() {
   requestAnimationFrame(animate);
   //rotate the cube
-  hyperionCube.rotation.x += 0.01;
-  hyperionCube.rotation.y += 0.01;
+  hyperionCube.rotation.y += 40;
 
   renderer.render(battle, camera);
 }
