@@ -6,13 +6,13 @@ const battle = new THREE.Scene();
 
 //Initialize a camera for our viewport
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
+  75, //FOV in degrees
+  window.innerWidth / window.innerHeight, //Aspect Ratio
+  0.1, //Near clipping plane
+  1000 //Far clipping plane
 );
 
 //initialize a renderer to render our scene with the camera
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(rederer.domElement);
+const renderer = new THREE.WebGLRenderer(); //WebGL is goto renderer
+renderer.setSize(window.innerWidth, window.innerHeight); //sets dimmensions for render
+document.body.appendChild(rederer.domElement); //add renderer to HTML
